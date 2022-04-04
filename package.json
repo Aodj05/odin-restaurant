@@ -1,11 +1,12 @@
 {
   "name": "odin-restaurant",
   "version": "1.0.0",
-  "description": "",
+  "description": "odin-restaurant",
   "main": "index.js",
   "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --progress --watch"
   },
   "author": "",
   "license": "ISC",

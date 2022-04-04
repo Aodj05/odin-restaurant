@@ -4,7 +4,7 @@ let contacts = [
     	'position': "Overseer",
     	'phone': "555-555-5554",
     	'email': "GreatOdin@praytome.com",
-    	'pic': "./img/file",
+    	'pic': "./img/Odin.jpg",
     	'alt': "Odin Photo"
   },
   {
@@ -12,14 +12,14 @@ let contacts = [
     	'position': "Drinking buddy",
     	'phone': "555-555-5555",
     	'email': "ThunderGodThor@praytome.com",
-    	'pic': "./img/file",
+    	'pic': "./img/thor.jpg",
     	'alt': "Thor Photo"},
   {
     	'name': "Frigg",
     	'position': "Queen AEsir",
     	'phone': "555-555-5556",
     	'email': "BowToYourGoddess@praytome.com",
-    	'pic': "./img/file",
+    	'pic': "./img/Frigg.jpg",
     	'alt': "Frigg Photo"
   }
 ]
@@ -56,26 +56,26 @@ let info = {
 let menu = [
 {
 	'item' : false,
-	'subtitle' : 'drinks'
+	'subtitle' : 'drink'
 },
 {
 	'item' : true,
 	'name' : "Mead",
 	'desc' : "Fermented honey mixed with water, fruit, spices, grains, and hops",
 	'price' : "One fallen warrior",
-	'pic' : "./img/file",
+	'pic' : "./img/beer-inside-mug-wooden-table.jpg",
 	'alt' : "Mead picture"
 },
 {
 	'item' : false,
-	'subtitle' : 'foods'
+	'subtitle' : 'food'
 },
 {
 	'item' : true,
 	'name' : "Boar",
 	'desc' : "Flesh of a boar slaughtered daily and made whole again each evening",
 	'price' : "Two fallen warriors",
-	'pic' : "./img/file",
+	'pic' : "./img/stockvault-roasted-meat109717.jpg",
 	'alt' : "Roast boar"
 },
 ]
@@ -89,15 +89,18 @@ let reviews = [
 
 
 let restTitle = {
-	'title' : "Odin's Restaurant"
+	'title' : "Odin's Restaurant",
+	'imgClass' : 'contact-img'
 }
 
 let menuTitle = {
 	'title' : 'Offerings',
+	'imgClass' : 'contact-img'
 }
 
 let contactTitle = {
-	'title': "Pray to us"
+	'title': "Pray to us",
+	'imgClass' : 'contact-img'
 }
 
 export { contacts, info, menu, reviews, restTitle, menuTitle, contactTitle };

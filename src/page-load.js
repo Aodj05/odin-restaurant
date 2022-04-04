@@ -52,8 +52,8 @@ function loadCard(cardConfig) {
 function loadContact(name, position, phone, email, pic, alt) {
 	return [
 	{
-		'outer': 'contact-outer',
-		'inner': 'contact-inner'
+		'outer': 'contact-out',
+		'inner': 'contact-in'
 	},
 	{
 	 	'ele': 'h3',
@@ -87,8 +87,8 @@ function loadContact(name, position, phone, email, pic, alt) {
 function loadInfo(info) {
 	return[[
 	{
-		'outer' : 'info-hrs-out',
-		'inner' : 'info-hrs-in'
+		'out' : 'info-hrs-out',
+		'in' : 'info-hrs-in'
 	},
 	{
 		'ele' : 'h3',
@@ -131,8 +131,8 @@ function loadInfo(info) {
       'class': 'saturday'
     }],
     [{
-      'outer': 'info-location-out',
-      'inner': 'info-location-in'
+      'out': 'info-location-out',
+      'in': 'info-location-in'
     },
     {
       'ele': 'h3',
@@ -142,12 +142,12 @@ function loadInfo(info) {
     {
       'ele': 'p',
       'text': 'Valhalla',
-      'class': 'address'
+      'class': 'realm'
 	}]
 	]
 }
 
-function loadMenuItem(name, desc, price, pic, alt) {
+function loadMenuItem(name, desc, price, pic, alt, attr) {
 	return [
 	{
 		'outer' : 'menu-out',
@@ -219,8 +219,8 @@ function loadSubTitleElements(subtitle, headingClass, containerClass) {
 	container.appendChild(heading);
 
 	let card = document.createElement('img');
-	card.classList.add('deco', 'sub-container');
-	card.setAttribute('src', './img/file');
+	card.classList.add('deco', 'sub-container-card');
+	card.setAttribute('src', './img/viking.png');
 
 	container.appendChild(card);
 
@@ -230,7 +230,7 @@ function loadSubTitleElements(subtitle, headingClass, containerClass) {
 function loadTitleElements(pTitle, imgClass, headingClass, containerClass) {
 	let img1 = document.createElement('img');
 	img1.classList.add('deco', imgClass);
-	img1.setAttribute('src', './img/file');
+	img1.setAttribute('src', './img/viking.png');
 
 	let container = document.createElement('div');
 	container.classList.add('heading-container');
@@ -262,24 +262,24 @@ function showInfo(parent, info) {
 
 	inform.forEach(section => {
 		let infoCard = loadCard(section);
-		parent.appendChild(info);
+		parent.appendChild(infoCard);
 	});
 
 	return true;
 }
 
-function loadMain(type, parent, content, title, info) {
+function loadMain(type, parent, contents, title, info) {
 	clear(parent);
 	loadTitle(type, parent, title);
 
-	content.forEach(content => {
+	contents.forEach(content => {
 		if (type == 'home') {
 			var contentConfig = loadReview(content.text, content.name);
 		} else if (type == 'menu') {
 				if (content.item) {
 					var contentConfig = loadMenuItem(content.name, content.desc, content.price, content.pic, content.alt);
 				} else {
-					var sectTitle = loadSubTitleElements(content.subtitle, 'title')
+					var sectTitle = loadSubTitleElements(content.subtitle, 'sub-heading', 'sub-container');
 					parent.appendChild(sectTitle);
 					return;
 				}
@@ -297,7 +297,7 @@ function loadMain(type, parent, content, title, info) {
 
 		let backg = document.createElement('img');
 		backg.classList.add('deco', 'backg');
-		backg.setAttribute('src', './img/file');
+		backg.setAttribute('src', './img/viking.png');
 
 		parent.appendChild(backg);
 	}
@@ -310,7 +310,7 @@ function loadTitle(type, parent, title) {
 	} else if (type == "menu") {
 		var titleElements = loadTitleElements(title.title, title.imgClass, "menu-heading", "menu-container");
 	} else if (type == "contact") {
-		var titleElements = loadTitleElements(title.title, imgClass, "contact-heading", "contact-container");
+		var titleElements = loadTitleElements(title.title, title.imgClass, "contact-heading", "contact-container");
 	} else {
 		var titleElements = loadSubTitleElements(title.title);
 	}
